@@ -1,9 +1,6 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<nav id="main-nav" class="main-nav" role="navigation">
-  <ul>
-    <li [routerLinkActive]='["active"]'><a [routerLink]='["/404"]'>{{ 'NAVIGATION.SIGN_IN' }}</a></li>
-    <li [routerLinkActive]='["active"]'><a [routerLink]='["/404"]'>{{ 'NAVIGATION.SIGN_UP' }}</a></li>
-  </ul>
-</nav>
+<button type="button" (click)="changeLanguage('pl')">translate to Pl</button>
+<button type="button" (click)="changeLanguage('en')">translate to EN</button>
+
+<navigation></navigation>
 
 <router-outlet></router-outlet>

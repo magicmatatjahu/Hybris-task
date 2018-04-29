@@ -1,14 +1,24 @@
 import { NgModule }                         from '@angular/core';
 import { RouterModule, Routes }             from '@angular/router';
+import { HttpClient }                       from '@angular/common/http';
 
 import {
-  AppComponent,
-  PageNotFoundComponent }                   from './containers';;
+  TranslateModule,
+  TranslateLoader }                         from '@ngx-translate/core';
+import { TranslateHttpLoader }              from '@ngx-translate/http-loader';
+
+import {
+  UserProfileComponent,
+  PageNotFoundComponent }                   from './containers';
+
+export function AppTranslateLoader(http: HttpClient) {
+  return new TranslateHttpLoader(http, './i18n/', '.json');
+}
 
 export const routes: Routes = [
   {
     path: '',
-    component: AppComponent,
+    component: UserProfileComponent,
     pathMatch: 'full',
   }, {
     path: '404',
@@ -20,7 +30,16 @@ export const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [ RouterModule.forRoot( routes) ],
+  imports: [ 
+    RouterModule.forRoot( routes),
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: (AppTranslateLoader),
+        deps: [HttpClient]
+      }
+    })
+  ],
   exports: [ RouterModule ]
 })
 export class AppRoutingModule {}

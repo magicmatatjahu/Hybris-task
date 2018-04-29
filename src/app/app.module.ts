@@ -1,24 +1,39 @@
 import { BrowserModule }          from '@angular/platform-browser';
 import { NgModule }               from '@angular/core';
+import { HttpClientModule }       from '@angular/common/http';
 
 import { AppRoutingModule }       from "./app.routing.module";
 
+import { NgxsModule }             from '@ngxs/store';
+
+import { states }                 from './app.state';
+
 import {
   AppComponent,
+  SearchBarComponent,
+  UserProfileComponent,
   PageNotFoundComponent }         from './containers';
 
-const CONTAINERS = [
+import {
+  NavigationComponent }           from './components';
+
+const DECLARATIONS = [
   AppComponent,
-  PageNotFoundComponent
+  SearchBarComponent,
+  UserProfileComponent,
+  PageNotFoundComponent,
+  NavigationComponent
 ]
 
 @NgModule({
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule,
+    AppRoutingModule,
+    NgxsModule.forRoot(states)
   ],
   declarations: [
-    ...CONTAINERS
+    ...DECLARATIONS
   ],
   providers: [
 

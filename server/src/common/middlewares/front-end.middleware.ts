@@ -30,7 +30,6 @@ export class FrontendMiddleware implements NestMiddleware {
     return (req, res, next) => {
 
       const { url } = req;
-      console.log(url)
 
       if ( url.indexOf( API_PREFIX) === 1) {
 

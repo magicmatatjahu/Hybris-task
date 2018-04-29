@@ -1,0 +1,13 @@
+{
+  "NAVIGATION": {
+    "LOGOUT": "LogOut",
+    "SIGN_IN": "Sign In",
+    "SIGN_UP": "Sign Up",
+    "RESET_PASSWORD": "Reset password",
+    "FAQ": "FAQ",
+    "TERMS": "Terms of use"
+  },
+  "LANGUAGE": {
+    "SELECT": "Language"
+  }
+}

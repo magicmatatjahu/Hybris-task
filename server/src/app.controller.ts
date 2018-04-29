@@ -11,4 +11,10 @@ export class AppController {
     response.sendFile( path.resolve(__dirname + '/../dist/index.html'))
   }
 
+  @Get('hello')
+  hello(): string {
+
+    return 'Hello World! :)'
+  }
+
 }
