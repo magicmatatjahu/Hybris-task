@@ -1,9 +1,14 @@
-import { Get, Controller } from '@nestjs/common';
+import * as path                  from 'path';
 
-@Controller('api')
+import { Get, Controller, Res }   from '@nestjs/common';
+
+@Controller()
 export class AppController {
+
   @Get()
-  root(): string {
-    return 'Hello World!';
+  angular( @Res() response): void {
+
+    response.sendFile( path.resolve(__dirname + '/../dist/index.html'))
   }
+
 }
