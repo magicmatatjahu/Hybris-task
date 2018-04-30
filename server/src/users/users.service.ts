@@ -6,6 +6,7 @@ export class UsersService {
 
   private readonly _githubApiUsersUrl: string = 'https://api.github.com/users';
   private readonly _githubApiReposUrl: string = 'https://api.github.com/repos';
+  private readonly _githubApiSearchsUrl: string = 'https://api.github.com/search';
 
   private readonly _config = {
     headers: {
@@ -51,17 +52,28 @@ export class UsersService {
   async getUserLangsStats( user: string): Promise<any> {
 
     const userlangs: string[] = (await this._getUserRepos( user)).map(repo => repo.language)
-    let langsStats = {}
+    let langsStats = []
 
     for(let lang of userlangs) {
 
       if( lang === null)
         continue
 
-      if( !langsStats.hasOwnProperty(lang))
-        langsStats[lang] = 1
-      else
-        langsStats[lang]++
+      let exists: boolean = false;
+      for( const l of langsStats) {
+
+        if( l['name'] === lang) {
+
+          l['value']++
+          exists = true;
+        }
+      }
+
+      if( !exists)
+        langsStats.push({
+          name: lang,
+          value: 1
+        })
     }
 
     return langsStats
@@ -71,7 +83,7 @@ export class UsersService {
 
     const userlangs: string[] = (await this._getUserRepos( user)).map(repo => repo.language)
     const userRepos: string[] = await this._getUserReposName( user)
-    let langsBytes = {}
+    let langsBytes = []
 
     for(const repo of userRepos) {
 
@@ -82,14 +94,30 @@ export class UsersService {
         if( userlangs.indexOf(lang) == -1)
           continue
 
-        if( !langsBytes.hasOwnProperty(lang))
-          langsBytes[lang] = repoLangsStats[lang]
-        else
-          langsBytes[lang] += repoLangsStats[lang]
+        let exists: boolean = false;
+        for( const l of langsBytes) {
+
+          if( l['name'] === lang) {
+
+            l['value'] += repoLangsStats[lang]
+            exists = true;
+          }
+        }
+
+        if( !exists) 
+          langsBytes.push({
+            name: lang,
+            value: repoLangsStats[lang]
+          })
       }
     }
 
     return langsBytes
+  }
+
+  async searchUser( query: string): Promise<any> {
+
+    return (await axios.get(`${this._githubApiSearchsUrl}/users?q=${query}`, this._config)).data.items.map(user => user.login)
   }
 
 

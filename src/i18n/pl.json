@@ -1,13 +1,7 @@
 {
-  "NAVIGATION": {
-    "LOGOUT": "Wyloguj się",
-    "SIGN_IN": "Logowanie",
-    "SIGN_UP": "Rejestracja",
-    "RESET_PASSWORD": "Resetowanie hasła",
-    "FAQ": "FAQ",
-    "TERMS": "Regulamin"
-  },
   "LANGUAGE": {
     "SELECT": "Język"
-  }
+  },
+  "SEARCH": "Szukaj użytkownika",
+  "COPYRIGHT": "Kwiecień 2018, Wszelkie prawa zastrzeżone"
 }

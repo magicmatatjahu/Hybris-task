@@ -1,0 +1,40 @@
+.navigation {
+
+    border-bottom: solid 1px #d1d5da;
+
+    .navigation__link {
+
+        display: inline-block;
+        padding: 16px 24px;
+        font-size: 18px;
+
+        &:hover {
+
+            border-bottom: solid 2px #24292e;
+            
+        }
+
+        a {
+            
+            text-decoration: none;
+            color: #24292e;
+        }
+    }
+
+    .navigation__link--active {
+
+        color: #24292e;
+        font-weight: 600;
+        border-bottom: solid 2px #e36209;
+
+        &:hover {
+
+            border-bottom: solid 2px #e36209;
+        }
+
+        a {
+
+            font-weight: 600;
+        }
+    }
+}

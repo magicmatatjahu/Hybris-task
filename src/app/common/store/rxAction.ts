@@ -1,4 +1,4 @@
-export class RxAction<P = void> {
+export class RxAction<P = any> {
   
-    constructor(public readonly payload: P) {}
+    constructor(public readonly payload?: P) {}
 }

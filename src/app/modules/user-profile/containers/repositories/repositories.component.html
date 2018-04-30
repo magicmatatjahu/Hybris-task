@@ -1,0 +1,28 @@
+<div class="container nopadding" class="repos">
+    <div class="row">
+
+      <div class="col-lg-12 nopadding">
+
+        <div class="container nopadding" *ngIf="(repos$ | async) as repos; else loading">
+
+            <ul class="row repos-list">
+              <li class="col-md-5 repos-list__repo repo nopadding" *ngFor="let repo of repos; let i = index">
+                  <p class="repo__name"><a href="{{repo.html_url}}" target="_blank">{{repo.name}}</a></p>
+                  <p class="repo__description">{{repo.description}}</p>
+
+                  <span class="repo__language"><b>{{ 'REPOS.LANG' | translate }}:</b> {{repo.language}}</span>
+                  <span class="repo__stargazers"><b>{{ 'REPOS.STARS' | translate }}:</b> {{repo.stargazers_count}}</span>
+                  <span class="repo__forks"><b>{{ 'REPOS.FORKS' | translate }}:</b> {{repo.forks_count}}</span>
+              </li>
+            </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+</div>
+
+<ng-template #loading>
+  <p>...is loading</p>
+</ng-template>

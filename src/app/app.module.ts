@@ -5,24 +5,26 @@ import { HttpClientModule }       from '@angular/common/http';
 import { AppRoutingModule }       from "./app.routing.module";
 
 import { NgxsModule }             from '@ngxs/store';
+import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
 import { states }                 from './app.state';
 
 import {
   AppComponent,
   SearchBarComponent,
-  UserProfileComponent,
   PageNotFoundComponent }         from './containers';
 
 import {
-  NavigationComponent }           from './components';
+  SearchService }                 from './services';
 
 const DECLARATIONS = [
   AppComponent,
   SearchBarComponent,
-  UserProfileComponent,
-  PageNotFoundComponent,
-  NavigationComponent
+  PageNotFoundComponent
+]
+
+const PROVIDERS = [
+  SearchService
 ]
 
 @NgModule({
@@ -30,13 +32,14 @@ const DECLARATIONS = [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    NgxsModule.forRoot(states)
+    NgxsModule.forRoot(states),
+    //NgxsLoggerPluginModule.forRoot()
   ],
   declarations: [
     ...DECLARATIONS
   ],
   providers: [
-
+    ...PROVIDERS
   ],
   bootstrap: [AppComponent]
 })

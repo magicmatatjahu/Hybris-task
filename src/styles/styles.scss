@@ -1,0 +1,22 @@
+@font-face {
+    font-family: "Malleable";
+    font-style: normal;
+    font-weight: 300;
+    src: url('../assets/fonts/malleable-fp-light.woff') format('woff')
+}
+
+body {
+    font-family: "Malleable";
+}
+
+.container, .container-fluid {
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.nopadding {
+    padding: 0;
+}

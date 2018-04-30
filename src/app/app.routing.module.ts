@@ -8,8 +8,10 @@ import {
 import { TranslateHttpLoader }              from '@ngx-translate/http-loader';
 
 import {
-  UserProfileComponent,
   PageNotFoundComponent }                   from './containers';
+
+import {
+  UserProfileComponent }                    from './modules/user-profile/containers';
 
 export function AppTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './i18n/', '.json');
@@ -18,8 +20,11 @@ export function AppTranslateLoader(http: HttpClient) {
 export const routes: Routes = [
   {
     path: '',
-    component: UserProfileComponent,
-    pathMatch: 'full',
+    component: PageNotFoundComponent,
+    pathMatch: 'full'
+  }, {
+    path: 'users/:user',
+    loadChildren: './modules/user-profile/user-profile.module#UserProfileModule'
   }, {
     path: '404',
     component: PageNotFoundComponent
@@ -37,9 +42,10 @@ export const routes: Routes = [
         provide: TranslateLoader,
         useFactory: (AppTranslateLoader),
         deps: [HttpClient]
-      }
+      },
+      isolate: true
     })
   ],
-  exports: [ RouterModule ]
+  exports: [ RouterModule, TranslateModule ]
 })
 export class AppRoutingModule {}

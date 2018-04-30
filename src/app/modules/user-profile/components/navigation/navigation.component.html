@@ -1,0 +1,17 @@
+  <div class="container nopadding">
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <nav class="navigation" role="navigation">
+          <ul>
+            <!-- <li class="navigation__link" [routerLinkActive]='["navigation__link--active"]'><a [routerLink]='["info"]'>{{ 'NAVIGATION.INFO' | translate }}</a></li> -->
+            <li class="navigation__link" [routerLinkActive]='["navigation__link--active"]'><a [routerLink]='["repositories"]'>{{ 'NAVIGATION.REPOS' | translate }} {{ (userInfo$ | async)?.public_repos }}</a></li>
+            <li class="navigation__link" [routerLinkActive]='["navigation__link--active"]'><a [routerLink]='["langs"]'>{{ 'NAVIGATION.LANGS_STATS' | translate }}</a></li>
+          </ul>
+        </nav>
+
+      </div>
+
+    </div>
+  </div>

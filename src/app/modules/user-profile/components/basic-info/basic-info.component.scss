@@ -1,0 +1,31 @@
+.basic-info {
+
+    max-width: 100%;
+
+    .basic-info__image {
+
+        width: 100%;
+        position: relative;
+        margin-bottom: 16px;
+        border-radius: 10px;
+    }
+
+    .basic-info__name {
+
+        font-size: 28px;
+        margin-bottom: 8px;
+        font-weight: 600;
+    }
+
+    .basic-info__login {
+
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .basic-info__email {
+
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+}

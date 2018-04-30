@@ -1,0 +1,67 @@
+<div class="container nopadding" class="langs">
+    <div class="row">
+
+      <div class="col-lg-12">
+
+        <div *ngIf="(loadedUserLangs$ | async); else loading">
+
+          <section *ngIf="(langs$ | async).langs as langs" class="langs__section">
+
+              <h2 class="langs__header">{{ 'LANGS.USING_LANGS' | translate }}</h2>
+
+              <ul class="langs__lists">
+                <li class="langs__lists-element" *ngFor="let lang of langs; let i = index">
+                    {{lang}}
+                </li>
+              </ul>
+
+          </section>
+
+          <section *ngIf="(langs$ | async).langsStats as langs" class="langs__section">
+
+              <h2 class="langs__header">{{ 'LANGS.LANGS_STATS' | translate }}</h2>
+
+              <ul class="langs__lists">
+                <li class="langs__lists-element lists-element" *ngFor="let lang of langs; let i = index">
+                    <span class="lists-element__name">{{lang['name']}}</span>
+                    <span class="lists-element__value">{{lang['value']}}</span>
+                </li>
+              </ul>
+              
+          </section>
+
+          <section *ngIf="(langs$ | async).langsBytes as langs" class="langs__section">
+
+              <h2 class="langs__header">{{ 'LANGS.LANGS_BYTES' | translate }}</h2>
+
+              <ul class="langs__lists">
+                <li class="langs__lists-element lists-element" *ngFor="let lang of langs; let i = index">
+                    <span class="lists-element__name">{{lang['name']}}</span>
+                    <span class="lists-element__value">{{lang['value']}}</span>
+                </li>
+              </ul>
+              
+          </section>
+
+            <!-- <ul class="langs__lists">
+              <li *ngFor="let lang of langs.langsStats; let i = index">
+                  {{lang}}
+              </li>
+            </ul>
+
+            <ul class="langs__lists">
+              <li *ngFor="let lang of langs.langsBytes; let i = index">
+                  {{lang}}
+              </li>
+            </ul> -->
+
+        </div>
+
+      </div>
+
+    </div>
+</div>
+
+<ng-template #loading>
+  <p>...is loading</p>
+</ng-template>

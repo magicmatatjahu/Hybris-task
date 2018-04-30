@@ -1,6 +1,42 @@
-<button type="button" (click)="changeLanguage('pl')">translate to Pl</button>
-<button type="button" (click)="changeLanguage('en')">translate to EN</button>
+<header class="container-fluid header">
 
-<navigation></navigation>
+  <div class="container header">
+
+      <div class="row justify-content-center">
+          <div class="col-sm-3 nopadding">
+            
+              <h1 class="header__logo">HYBRIS TASK</h1>
+      
+          </div>
+          <div class="col-sm-6 search-bar nopadding">
+      
+              <search-bar></search-bar>
+      
+          </div>
+          <div class="col-sm-3 nopadding header__buttons">
+
+            <div class="button">
+
+                <button type="button" (click)="changeLanguage('pl')">Polski</button>
+                <button type="button" (click)="changeLanguage('en')">English</button>
+
+            </div>
+      
+          </div>
+      </div>
+
+  </div>
+
+</header>
 
 <router-outlet></router-outlet>
+
+<footer class="container-fluid footer">
+
+  <div class="row justify-content-center">
+    <div class="col-sm nopadding">
+      
+      <p class="footer__author">Maciej Urbańczyk, {{ 'COPYRIGHT' | translate }}</p>
+    </div>
+  </div>
+</footer>

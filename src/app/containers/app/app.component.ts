@@ -8,7 +8,6 @@ import {
   LanguageState }               from '../../app.state';
 
 import { Observable }           from "rxjs/Observable";
-import { Subject }              from "rxjs/Subject";
 
 @Component({
   selector: 'app',
@@ -28,7 +27,6 @@ export class AppComponent {
 
     this.lang$.subscribe( lang => {
 
-      console.log( lang)
       this._translate.use(lang)
     })
   }

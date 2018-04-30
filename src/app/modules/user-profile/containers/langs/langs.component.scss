@@ -1,0 +1,45 @@
+.langs {
+
+    .langs__section {
+
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .langs__header {
+
+        font-size: 26px;
+        margin-bottom: 16px;
+    }
+
+    .langs__lists {
+
+        list-style-type: square;
+        margin: 0 0 0 15px;
+    }
+
+    .langs__lists-element {
+
+        margin: 0 0 8px 0;
+        font-size: 18px;
+        position: relative;
+    }
+
+    .lists-element {
+
+        width: 300px;
+
+        .lists-element__name {
+
+            display: inline-block;
+        }
+
+        .lists-element__value {
+            
+            position: absolute;
+            right: 0;
+            top: 0;
+            font-weight: 600;
+        }
+    }
+}

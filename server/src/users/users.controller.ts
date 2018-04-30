@@ -59,4 +59,11 @@ export class UsersController {
 
     return this._usersService.getUserLangsBytesStats( user);
   }
+
+  @Get('search/:query')
+  async searchUser( @Param('query') query: string): Promise<any> {
+
+    return this._usersService.searchUser( query);
+  }
+
 }

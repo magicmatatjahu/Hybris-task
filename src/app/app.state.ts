@@ -12,16 +12,17 @@ export class ChangeLanguage extends RxAction<string> {
 
 @State<string>({
   name: 'language',
-  defaults: 'en'
+  defaults: window.localStorage.getItem('i18n') || 'en'
 })
 export class LanguageState {
 
     @Action(ChangeLanguage)
     changeLanguage({ getState, setState }: StateContext<string>, { payload }: ChangeLanguage) {
 
+      window.localStorage.setItem('i18n', payload)
       setState(payload);
     }
 
 }
 
-export const states = [LanguageState];
+export const states = [LanguageState]

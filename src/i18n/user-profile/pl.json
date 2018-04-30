@@ -1,0 +1,18 @@
+{
+  "NAVIGATION": {
+    "INFO": "Informacje",
+    "REPOS": "Repozytoria",
+    "LANGS_STATS": "Statystyki języków"
+  },
+  "REPOS": {
+    "LANG": "Język",
+    "STARS": "Gwiazdki",
+    "FORKS": "Forki"
+  },
+  "LANGS": {
+    "USING_LANGS": "Używane języki",
+    "LANGS_STATS": "Ilość repozytoriów na język",
+    "LANGS_BYTES": "Ilość bajtów na język"
+  },
+  "PRIVATE_EMAIL": "Prywatny email"
+}
