@@ -1,6 +1,6 @@
 # Hybris task
 
-This project was created for the recruitment task - Cloud Software Engineer (student). The application was written using [Angular2+](https://angular.io/) and NestJS[NestJS](https://nestjs.com/)
+This project was created for the recruitment task - Cloud Software Engineer (student). The application was written using [Angular2+](https://angular.io/) and [NestJS](https://nestjs.com/)
 
 ## Heroku app
 
