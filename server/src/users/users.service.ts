@@ -10,7 +10,7 @@ export class UsersService {
 
   private readonly _config = {
     headers: {
-        'Authorization': 'token 0658db9e035a78815dd36e39f7a6e0dbfa8c087d',
+        'Authorization': 'token <token>',
     }
   }
 
