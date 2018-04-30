@@ -13,7 +13,7 @@ import {
 import { 
   ChangeUser }                  from '../../user-profile.state';
 
-import { Observable }           from "rxjs/Observable";
+import { Observable }           from "rxjs";
 
 @Component({
   selector: 'user-profile',

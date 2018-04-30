@@ -6,7 +6,7 @@ import {
   UserState,
   LoadUserLangs }               from '../../user-profile.state';
 
-import { Observable }           from 'rxjs/observable';
+import { Observable }           from 'rxjs';
 
 @Component({
   selector: 'langs',
@@ -19,7 +19,7 @@ export class LangsComponent implements OnInit {
     return {
       langs: UserState.user_profile.user.langs,
       langsStats: UserState.user_profile.user.langsStats,
-      langsBytes:UserState.user_profile.user.langsBytes
+      langsBytes: UserState.user_profile.user.langsBytes
     }
   }) langs$: Observable<any>;
 

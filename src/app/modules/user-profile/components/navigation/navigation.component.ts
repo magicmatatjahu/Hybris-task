@@ -5,7 +5,7 @@ import { Select }               from '@ngxs/store';
 import { 
   UserState }                   from '../../user-profile.state';
 
-import { Observable }           from 'rxjs/observable';
+import { Observable }           from 'rxjs';
 
 @Component({
   selector: 'navigation',

@@ -6,7 +6,7 @@ import {
   UserState,
   LoadUserRepos }               from '../../user-profile.state';
 
-import { Observable }           from 'rxjs/observable';
+import { Observable }           from 'rxjs';
 
 @Component({
   selector: 'repositories',
