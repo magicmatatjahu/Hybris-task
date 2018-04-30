@@ -5,7 +5,8 @@ import { Store, Select }        from '@ngxs/store';
 
 import { 
   ChangeLanguage,
-  LanguageState }               from '../../app.state';
+  SearchBarFocus,
+  AppState }                    from '../../app.state';
 
 import { Observable }           from "rxjs/Observable";
 
@@ -16,7 +17,7 @@ import { Observable }           from "rxjs/Observable";
 })
 export class AppComponent {
 
-  @Select( LanguageState) lang$: Observable<string>;
+  @Select( AppState => AppState.app.language) lang$: Observable<string>;
 
   constructor(
     private readonly _store: Store,
@@ -35,4 +36,13 @@ export class AppComponent {
 
     this._store.dispatch( new ChangeLanguage( lang))
   }
+
+  public clickWholeApp( $event: any) {
+
+    if( $event.target.toString() === '[object HTMLInputElement]')
+      this._store.dispatch( new SearchBarFocus( true))
+    else
+      this._store.dispatch( new SearchBarFocus( false))
+  }
+
 }

@@ -2,6 +2,11 @@
   "LANGUAGE": {
     "SELECT": "Language"
   },
+  "ERROR": {
+    "USER_NOT_FOUND": "User not found. Try again."
+  },
   "SEARCH": "Search user",
+  "MAIN": "Search for Github in the \"Search user\" field.",
+  "PAGE_NOT_FOUND": "Page not found. Try search user.",
   "COPYRIGHT": "April 2018, All right reserved"
 }

@@ -78,10 +78,7 @@ export class UserState {
           loadedUserInfo: false,
           loadedUserRepos: false,
           loadedUserLangs: false,
-          user: {
-                ...user,
-                login: payload
-          }
+          user: Object.assign({} as IUser, { login: payload })
       })
     }
 

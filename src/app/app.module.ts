@@ -1,5 +1,5 @@
 import { BrowserModule }          from '@angular/platform-browser';
-import { NgModule }               from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule }       from '@angular/common/http';
 
 import { AppRoutingModule }       from "./app.routing.module";
@@ -7,18 +7,26 @@ import { AppRoutingModule }       from "./app.routing.module";
 import { NgxsModule }             from '@ngxs/store';
 import { NgxsLoggerPluginModule } from '@ngxs/logger-plugin';
 
+import { ErrorsHandler }          from './common/errorHandlers';
+
 import { states }                 from './app.state';
 
 import {
   AppComponent,
-  SearchBarComponent,
+  MainComponent,
+  ErrorComponent,
   PageNotFoundComponent }         from './containers';
+
+import {
+  SearchBarComponent }            from './components';
 
 import {
   SearchService }                 from './services';
 
 const DECLARATIONS = [
   AppComponent,
+  MainComponent,
+  ErrorComponent,
   SearchBarComponent,
   PageNotFoundComponent
 ]
@@ -39,7 +47,11 @@ const PROVIDERS = [
     ...DECLARATIONS
   ],
   providers: [
-    ...PROVIDERS
+    ...PROVIDERS,
+    {
+      provide: ErrorHandler,
+      useClass: ErrorsHandler
+    },
   ],
   bootstrap: [AppComponent]
 })

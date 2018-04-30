@@ -11,8 +11,9 @@
   },
   "LANGS": {
     "USING_LANGS": "Używane języki",
-    "LANGS_STATS": "Ilość repozytoriów na język",
+    "LANGS_STATS": "Ilość repozytoriów publicznych na język",
     "LANGS_BYTES": "Ilość bajtów na język"
   },
-  "PRIVATE_EMAIL": "Prywatny email"
+  "PRIVATE_EMAIL": "Prywatny email",
+  "LOADING": "Wczytywanie..."
 }

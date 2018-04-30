@@ -8,7 +8,7 @@ import {
 import { Store, Select }        from '@ngxs/store';
 
 import { 
-  LanguageState }               from '../../../../app.state';
+  AppState }               from '../../../../app.state';
 
 import { 
   ChangeUser }                  from '../../user-profile.state';
@@ -22,7 +22,7 @@ import { Observable }           from "rxjs";
 })
 export class UserProfileComponent implements OnInit {
 
-  @Select( LanguageState) lang$: Observable<string>;
+  @Select( AppState => AppState.app.language) lang$: Observable<string>;
 
   constructor(
     private readonly _store: Store,

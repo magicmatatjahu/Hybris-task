@@ -1,42 +1,46 @@
-<header class="container-fluid header">
+<div class="app" (click)="clickWholeApp($event)">
 
-  <div class="container header">
+  <header class="container-fluid header">
 
-      <div class="row justify-content-center">
-          <div class="col-sm-3 nopadding">
-            
-              <h1 class="header__logo">HYBRIS TASK</h1>
-      
-          </div>
-          <div class="col-sm-6 search-bar nopadding">
-      
-              <search-bar></search-bar>
-      
-          </div>
-          <div class="col-sm-3 nopadding header__buttons">
+    <div class="container header">
 
-            <div class="button">
-
-                <button type="button" (click)="changeLanguage('pl')">Polski</button>
-                <button type="button" (click)="changeLanguage('en')">English</button>
-
+        <div class="row justify-content-center">
+            <div class="col-sm-3 nopadding">
+              
+                <h1 class="header__logo"><a [routerLink]='["/"]'>HYBRIS TASK</a></h1>
+        
             </div>
-      
-          </div>
-      </div>
+            <div class="col-sm-6 search-bar nopadding">
+        
+                <search-bar></search-bar>
+        
+            </div>
+            <div class="col-sm-3 nopadding header__buttons">
 
-  </div>
+              <div class="button">
 
-</header>
+                  <button type="button" (click)="changeLanguage('pl')">Polski</button>
+                  <button type="button" (click)="changeLanguage('en')">English</button>
 
-<router-outlet></router-outlet>
+              </div>
+        
+            </div>
+        </div>
 
-<footer class="container-fluid footer">
-
-  <div class="row justify-content-center">
-    <div class="col-sm nopadding">
-      
-      <p class="footer__author">Maciej Urbańczyk, {{ 'COPYRIGHT' | translate }}</p>
     </div>
-  </div>
-</footer>
+
+  </header>
+
+  <router-outlet></router-outlet>
+
+  <footer class="container-fluid footer">
+
+    <div class="row justify-content-center">
+      <div class="col-sm nopadding">
+        
+        <p class="footer__author">Maciej Urbańczyk, {{ 'COPYRIGHT' | translate }}</p>
+      </div>
+    </div>
+  </footer>
+
+</div>

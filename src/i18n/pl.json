@@ -2,6 +2,11 @@
   "LANGUAGE": {
     "SELECT": "Język"
   },
+  "ERROR": {
+    "USER_NOT_FOUND": "Nie znaleziono użytkownika. Spróbuj ponownie."
+  },
   "SEARCH": "Szukaj użytkownika",
+  "MAIN": "Wyszukaj użytkownika Github w polu \"Szukaj użytkownika\".",
+  "PAGE_NOT_FOUND": "Strony nie znaleziono. Spróbuj wyszukać użytkownika.",
   "COPYRIGHT": "Kwiecień 2018, Wszelkie prawa zastrzeżone"
 }

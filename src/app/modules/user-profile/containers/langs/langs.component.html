@@ -43,18 +43,6 @@
               
           </section>
 
-            <!-- <ul class="langs__lists">
-              <li *ngFor="let lang of langs.langsStats; let i = index">
-                  {{lang}}
-              </li>
-            </ul>
-
-            <ul class="langs__lists">
-              <li *ngFor="let lang of langs.langsBytes; let i = index">
-                  {{lang}}
-              </li>
-            </ul> -->
-
         </div>
 
       </div>
@@ -63,5 +51,5 @@
 </div>
 
 <ng-template #loading>
-  <p>...is loading</p>
+  <p class="loading">{{ 'LOADING' | translate }}</p>
 </ng-template>

@@ -8,6 +8,8 @@ import {
 import { TranslateHttpLoader }              from '@ngx-translate/http-loader';
 
 import {
+  MainComponent,
+  ErrorComponent,
   PageNotFoundComponent }                   from './containers';
 
 import {
@@ -20,11 +22,14 @@ export function AppTranslateLoader(http: HttpClient) {
 export const routes: Routes = [
   {
     path: '',
-    component: PageNotFoundComponent,
+    component: MainComponent,
     pathMatch: 'full'
   }, {
     path: 'users/:user',
     loadChildren: './modules/user-profile/user-profile.module#UserProfileModule'
+  }, {
+    path: 'error',
+    component: ErrorComponent
   }, {
     path: '404',
     component: PageNotFoundComponent

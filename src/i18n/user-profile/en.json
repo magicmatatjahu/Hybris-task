@@ -11,9 +11,10 @@
     },
     "LANGS": {
       "USING_LANGS": "Using languages",
-      "LANGS_STATS": "Number of repositories per language",
+      "LANGS_STATS": "Number of public repositories per language",
       "LANGS_BYTES": "Number of bytes per language"
     },
-    "PRIVATE_EMAIL": "Private email"
+    "PRIVATE_EMAIL": "Private email",
+    "LOADING": "Loading..."
 }
   

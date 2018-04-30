@@ -3,12 +3,11 @@
   <input
     id="search"
     class="search-input__input"
-    (keyup)="searchTerm$.next($event.target.value)"
-    (click)="clickSearchBar($event)"
+    (keyup)="searchTerm($event)"
     placeholder="{{ 'SEARCH' | translate }}">
 </label>
 
-    <ul class="search-results" *ngIf="show && (results$ | async) as results">
+    <ul class="search-results" *ngIf="(showList$ | async) && (results$ | async) as results">
 
         <li class="search-results__result" *ngFor="let result of results | slice:0:9">
 
