@@ -1,27 +1,20 @@
-# HybrisProject
+# Hybris task
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+This project was created for the recruitment task - Cloud Software Engineer (student). The application was written using [Angular2+](https://angular.io/) + and NestJS[Angular2+](https://nestjs.com/)
 
-## Development server
+## Heroku app
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The live version of the application is located on the "Heroku" cloud under the [LINK](https://hybris-task-maciej-urbanczyk.herokuapp.com/)
 
-## Code scaffolding
+## Api paths
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+`/api/hello` - Hello World! :)
+`/api/users/:user/info` - information about the github user
+`/api/users/:user/info/email` - user's email. If private, api returns 'Private email :C'
+`/api/users/:user/repos` - all user's public repositories
+`/api/users/:user/repos/:repo` - information about the exact user's public repository
+`/api/users/:user/repos/:repo/lang` - returns the language of the repository
+`/api/users/:user/langs` - returns the languages used by the user
+`/api/users/:user/langs/stats` - returns statistics (number of public repositories) of languages used by the user
+`/api/users/:user/langs/stats/bytes` - returns statistics (number of bytes) of languages used by the user
+`/api/users/search/:query` - returns users who contain a query in their name
